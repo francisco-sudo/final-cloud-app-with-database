@@ -147,8 +147,6 @@ def show_exam_result(request, course_id, submission_id):
     choices_ids = []
     for choice in choices:
         choices_ids.append(choice.id)
-    
-    
     lessons = course.lesson_set.all()
     cont_question = 0
     right = 0
@@ -160,7 +158,7 @@ def show_exam_result(request, course_id, submission_id):
                 right += 1
                 
 
-    total = (right / question_len * 100)
+    total = (right / cont_question * 100)
 
     context = {}
     context['course'] = course
